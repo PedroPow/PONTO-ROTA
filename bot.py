@@ -15,7 +15,6 @@ fim = datetime.now(brasil)
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
-
 TOKEN = os.getenv("TOKEN_ROTA")  # Certifique-se de definir o TOKEN no .env ou variáveis de ambiente # Certifique-se de definir o TOKEN no .env ou variáveis de ambiente
 
 # guard para não reenviar painel/verify em reconexões
@@ -47,16 +46,16 @@ async def atualizar_painel(guild):
         lista = "Nenhum Policial em serviço."
 
     embed = discord.Embed(
-        title="<:PRF:1495964314539130980> Painel de Ponto - PRF",
+        title="<:FT:1496355093476278404> Painel de Ponto - FT",
         description=f"**Policiais em serviço:**\n\n{lista}",
         color=discord.Color.yellow()
     )
 
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/1444735189765849320/1495965745400516708/PRF.png?ex=69e8d2eb&is=69e7816b&hm=013711d4e7c3d7c993284918738c7994c16ddb24a8ffbf7c3ca0f6a6368b7be9&format=webp&quality=lossless&width=518&height=648&")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")
 
-    embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496323086155255949/FAIXA_PONTO_ELETRONICO.png?ex=69e976f8&is=69e82578&hm=ff8d1d2cf4c4bcb69ea310707e18a5dfc3d0da9ec625d8292fb2bcfe8fe59b03&")
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496356400673067128/FAIXA_PONTO_ELETRONICO_FT.png?ex=69e995fe&is=69e8447e&hm=24ff17046f115679f3326dfb9664f5f9a97fb9c69b1545e12a14e13f1f4be759&")
 
-    embed.set_footer(text="Batalhão PRF Virtual® Todos direitos reservados.", icon_url="https://media.discordapp.net/attachments/1496035727241121955/1496048035652964412/PRF.png?ex=69e91f8e&is=69e7ce0e&hm=ed2125666f9e2f5036aef0eadd58f3d3ca2f8ea9755f5ad63a164c3d0febf6d1&")    
+    embed.set_footer(text="Batalhão FT Virtual® Todos direitos reservados.", icon_url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")    
 
     try:
         if mensagem_painel_id:
@@ -91,7 +90,7 @@ class PontoView(View):
         pontos_ativos[user_id] = inicio
 
         embed = discord.Embed(
-            title="<:PORTAABERTA:1496324630036877322>  Ponto Iniciado",
+            title="<:PORTAABERTA:1496357008884895935>  Ponto Iniciado",
             description=(
                 f"> 👮🏽 Policial: {interaction.user.mention}\n"
                 f"> \n"
@@ -100,11 +99,11 @@ class PontoView(View):
             color=discord.Color.yellow()
         )
 
-        embed.set_thumbnail(url="https://media.discordapp.net/attachments/1444735189765849320/1495965745400516708/PRF.png?ex=69e8d2eb&is=69e7816b&hm=013711d4e7c3d7c993284918738c7994c16ddb24a8ffbf7c3ca0f6a6368b7be9&format=webp&quality=lossless&width=518&height=648&")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")
 
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496323086155255949/FAIXA_PONTO_ELETRONICO.png?ex=69e976f8&is=69e82578&hm=ff8d1d2cf4c4bcb69ea310707e18a5dfc3d0da9ec625d8292fb2bcfe8fe59b03&")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496356400673067128/FAIXA_PONTO_ELETRONICO_FT.png?ex=69e995fe&is=69e8447e&hm=24ff17046f115679f3326dfb9664f5f9a97fb9c69b1545e12a14e13f1f4be759&")
 
-        embed.set_footer(text="Batalhão PRF Virtual® Todos direitos reservados.", icon_url="https://media.discordapp.net/attachments/1496035727241121955/1496048035652964412/PRF.png?ex=69e91f8e&is=69e7ce0e&hm=ed2125666f9e2f5036aef0eadd58f3d3ca2f8ea9755f5ad63a164c3d0febf6d1&")          
+        embed.set_footer(text="Batalhão FT Virtual® Todos direitos reservados.", icon_url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")          
 
         await interaction.response.send_message(embed=embed, ephemeral=True)
 
@@ -135,7 +134,7 @@ class PontoView(View):
         minutos, _ = divmod(resto, 60)
 
         embed = discord.Embed(
-            title="<:PORTAFECHADA:1496324604996747284> Ponto Finalizado",
+            title="<:PORTAFECHADA:1496357051956199515> Ponto Finalizado",
             description=(
                 f"> 👮🏽 Policial: {interaction.user.mention}\n"
                 f"> \n"
@@ -146,11 +145,11 @@ class PontoView(View):
             color=discord.Color.yellow()
         )
 
-        embed.set_thumbnail(url="https://media.discordapp.net/attachments/1444735189765849320/1495965745400516708/PRF.png?ex=69e8d2eb&is=69e7816b&hm=013711d4e7c3d7c993284918738c7994c16ddb24a8ffbf7c3ca0f6a6368b7be9&format=webp&quality=lossless&width=518&height=648&")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")
 
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496323086155255949/FAIXA_PONTO_ELETRONICO.png?ex=69e976f8&is=69e82578&hm=ff8d1d2cf4c4bcb69ea310707e18a5dfc3d0da9ec625d8292fb2bcfe8fe59b03&")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496356400673067128/FAIXA_PONTO_ELETRONICO_FT.png?ex=69e995fe&is=69e8447e&hm=24ff17046f115679f3326dfb9664f5f9a97fb9c69b1545e12a14e13f1f4be759&")
 
-        embed.set_footer(text="Batalhão PRF Virtual® Todos direitos reservados.", icon_url="https://media.discordapp.net/attachments/1496035727241121955/1496048035652964412/PRF.png?ex=69e91f8e&is=69e7ce0e&hm=ed2125666f9e2f5036aef0eadd58f3d3ca2f8ea9755f5ad63a164c3d0febf6d1&")        
+        embed.set_footer(text="Batalhão FT Virtual® Todos direitos reservados.", icon_url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")        
 
         await interaction.response.send_message(embed=embed, ephemeral=True)
 
@@ -182,22 +181,22 @@ async def on_ready():
 
     if canal_botoes:
         embed = discord.Embed(
-            title="<:RELOGIO:1496308882560123000> Sistema de Ponto eletrônico - PRF",
+            title="<:RELOGIO:1496355225722814616> Sistema de Ponto eletrônico - FT",
             description="> **Clique no botão** para iniciar ou finalizar seu ponto, após iniciar você precisa seguir as regras para continuar contando!\n\n"
             "> 📢 LEIA ANTES DE COMECAR:\n\n" \
             "> Caso você fique offline ou ausente no Discord\n"
             "> seu ponto será fechado automaticamente\n\n"
             "> Clique no botão Iniciar para começar o expediente e\n"
             "> Clique no botão Fechar para finalizar o expediente.\n\n"
-            "> Caso queira ver o painel de serviço, acesse o canal <#1496313782224552007>",
+            "> Caso queira ver o painel de serviço, acesse o canal <#1496350066389160039>",
             color=discord.Color.yellow()
         )
 
-        embed.set_thumbnail(url="https://media.discordapp.net/attachments/1444735189765849320/1495965745400516708/PRF.png?ex=69e8d2eb&is=69e7816b&hm=013711d4e7c3d7c993284918738c7994c16ddb24a8ffbf7c3ca0f6a6368b7be9&format=webp&quality=lossless&width=518&height=648&")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")
 
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496323086155255949/FAIXA_PONTO_ELETRONICO.png?ex=69e976f8&is=69e82578&hm=ff8d1d2cf4c4bcb69ea310707e18a5dfc3d0da9ec625d8292fb2bcfe8fe59b03&")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1444735189765849320/1496356400673067128/FAIXA_PONTO_ELETRONICO_FT.png?ex=69e995fe&is=69e8447e&hm=24ff17046f115679f3326dfb9664f5f9a97fb9c69b1545e12a14e13f1f4be759&")
 
-        embed.set_footer(text="Batalhão PRF Virtual® Todos direitos reservados.", icon_url="https://media.discordapp.net/attachments/1496035727241121955/1496048035652964412/PRF.png?ex=69e91f8e&is=69e7ce0e&hm=ed2125666f9e2f5036aef0eadd58f3d3ca2f8ea9755f5ad63a164c3d0febf6d1&")
+        embed.set_footer(text="Batalhão FT Virtual® Todos direitos reservados.", icon_url="https://cdn.discordapp.com/attachments/1444735189765849320/1495479496084557834/FT.png?ex=69e90850&is=69e7b6d0&hm=6f1b2ae4ab83875f692a56c82576c6cb3adf38e214c81d7e1a0522f80519aa3c&")
 
         try:
             await canal_botoes.send(embed=embed, view=PontoView())
