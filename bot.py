@@ -16,7 +16,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-TOKEN = os.getenv("TOKEN_PRF")  # Certifique-se de definir o TOKEN no .env ou variáveis de ambiente # Certifique-se de definir o TOKEN no .env ou variáveis de ambiente
+TOKEN = os.getenv("TOKEN_ROTA")  # Certifique-se de definir o TOKEN no .env ou variáveis de ambiente # Certifique-se de definir o TOKEN no .env ou variáveis de ambiente
 
 # guard para não reenviar painel/verify em reconexões
 bot._ready_sent = False
