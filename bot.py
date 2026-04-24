@@ -313,7 +313,7 @@ async def on_ready():
             "> seu ponto será fechado automaticamente\n\n"
             "> Clique no botão Iniciar para começar o expediente e\n"
             "> Clique no botão Fechar para finalizar o expediente.\n\n"
-            "> Caso queira ver o painel de serviço, acesse o canal <#1496313782224552007>",
+            "> Caso queira ver o painel de serviço, acesse o canal <#1496350066389160039>",
             color=discord.Color.yellow()
         )
 
